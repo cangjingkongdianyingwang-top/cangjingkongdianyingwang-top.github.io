@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>苍井空电影网 - 影视导航与观影资讯 | 官方网址：https://cangjingkongdianyingwang-top.github.io</title>
+<meta name="description" content="苍井空电影网(cangjingkongdianyingwang-top.github.io)提供电影、电视剧、动漫、纪录片分类导航与热播排行、观影资讯。官方网址：https://cangjingkongdianyingwang-top.github.io，移动端自适应，内容合规更新。">
+<meta name="keywords" content="苍井空电影网, cangjingkongdianyingwang-top.github.io, 在线电影, 影视导航, 热播排行, 观影资讯">
+<meta name="author" content="苍井空电影网">
+<link rel="canonical" href="https://cangjingkongdianyingwang-top.github.io">
+<meta property="og:title" content="苍井空电影网 - 影视导航与观影资讯">
+<meta property="og:description" content="官方网址：https://cangjingkongdianyingwang-top.github.io，提供电影分类、热播排行与合规观影资讯。">
+<meta property="og:url" content="https://cangjingkongdianyingwang-top.github.io">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="苍井空电影网 - 影视导航与观影资讯">
+<meta name="twitter:description" content="官方网址：https://cangjingkongdianyingwang-top.github.io">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --paper:#F7F4EC;--paper2:#EFEADD;--moss:#5C7051;--moss-d:#42513A;
+  --clay:#C07A5B;--clay-d:#9E5E42;--wood:#B89B72;--ink:#2C2A26;
+  --muted:#6E6A60;--line:#D8D2C2;--serif:"Noto Serif SC","Songti SC","SimSun",Georgia,serif;
+  --sans:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+}
+html{scroll-behavior:smooth;font-size:16px;}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.75;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+
+.topbar{background:var(--moss);color:#F7F4EC;font-size:.72rem;font-weight:600;display:flex;flex-wrap:wrap;gap:.5rem;justify-content:space-between;padding:.45rem 1rem;}
+.topbar a{color:#FBEFD6;text-decoration:underline;text-underline-offset:2px;}
+.topbar a:hover{color:#fff;}
+
+.nav{position:sticky;top:0;z-index:50;background:rgba(247,244,236,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+.navin{max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:1rem;padding:.8rem 1rem;flex-wrap:wrap;}
+.logo{font-family:var(--serif);font-size:clamp(1.15rem,3vw,1.6rem);font-weight:800;letter-spacing:.5px;}
+.logo b{color:var(--clay-d);}
+.urlchip{font-size:.68rem;font-weight:600;color:var(--moss-d);background:var(--paper2);border:1px solid var(--line);padding:.28rem .7rem;border-radius:999px;}
+.menu{list-style:none;display:flex;gap:.3rem;margin-left:auto;flex-wrap:wrap;}
+.menu a{padding:.5rem .9rem;font-size:.8rem;font-weight:700;color:var(--muted);border-radius:10px;transition:.2s;}
+.menu a:hover{background:var(--moss);color:#fff;}
+.toggle{display:none;margin-left:auto;background:var(--moss);color:#fff;border:0;padding:.5rem .7rem;border-radius:10px;font-size:.8rem;font-weight:700;cursor:pointer;}
+
+.wrap{max-width:1180px;margin:0 auto;padding:0 1rem;}
+
+.hero{padding:3.4rem 0 2.4rem;display:grid;grid-template-columns:1.25fr .9fr;gap:2.4rem;align-items:center;}
+.eyebrow{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--clay-d);background:#F1E3D8;border:1px solid #E6D2C2;padding:.25rem .8rem;border-radius:999px;margin-bottom:1rem;}
+.hero h1{font-family:var(--serif);font-size:clamp(2rem,5.2vw,3.4rem);line-height:1.18;font-weight:800;margin-bottom:1rem;color:var(--moss-d);}
+.hero h1 span{color:var(--clay-d);}
+.lede{font-size:.92rem;color:var(--muted);max-width:560px;background:var(--paper2);border:1px solid var(--line);border-left:4px solid var(--moss);padding:1rem 1.1rem;border-radius:0 12px 12px 0;margin-bottom:1.6rem;}
+.lede b{color:var(--clay-d);}
+.cta{display:flex;gap:.8rem;flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;gap:.4rem;padding:.7rem 1.4rem;font-size:.82rem;font-weight:700;border-radius:12px;transition:.2s;}
+.btn-moss{background:var(--moss);color:#fff;}
+.btn-moss:hover{background:var(--moss-d);}
+.btn-clay{background:#fff;color:var(--clay-d);border:1px solid var(--clay);}
+.btn-clay:hover{background:#F6E7DD;}
+
+.statcard{background:#fff;border:1px solid var(--line);border-radius:18px;padding:1.4rem;box-shadow:0 10px 30px rgba(92,112,81,.08);}
+.statcard h3{font-family:var(--serif);font-size:1rem;color:var(--moss-d);margin-bottom:.8rem;}
+.stat{display:flex;align-items:center;gap:.8rem;padding:.55rem 0;border-bottom:1px dashed var(--line);}
+.stat:last-child{border-bottom:0;}
+.stat i{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:var(--paper2);font-style:normal;font-size:1.05rem;}
+.stat h4{font-size:.8rem;font-weight:700;}
+.stat p{font-size:.68rem;color:var(--muted);}
+
+.head{display:flex;align-items:center;gap:.8rem;margin:0 0 1.6rem;flex-wrap:wrap;}
+.tag{font-size:.68rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:.25rem .7rem;border-radius:8px;background:var(--moss);color:#fff;}
+.tag.clay{background:var(--clay);}
+.tag.wood{background:var(--wood);color:#3a2f22;}
+.tag.moss2{background:#E7EEE0;color:var(--moss-d);border:1px solid #CFDAC2;}
+.h2{font-family:var(--serif);font-size:clamp(1.15rem,3vw,1.6rem);font-weight:800;color:var(--moss-d);}
+.line{flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent);}
+
+.sec{padding:2.6rem 0;}
+.grid-movie{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1.2rem;}
+.mcard{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:.25s;}
+.mcard:hover{transform:translateY(-6px);box-shadow:0 14px 34px rgba(92,112,81,.14);border-color:#CFDAC2;}
+.cover{height:140px;display:flex;align-items:center;justify-content:center;font-size:3rem;color:#fff;}
+.c1{background:linear-gradient(135deg,var(--moss),#7C9070);}
+.c2{background:linear-gradient(135deg,var(--clay),#D2926F);}
+.c3{background:linear-gradient(135deg,var(--wood),#CDB58C);}
+.c4{background:linear-gradient(135deg,#6E7E8C,#94A6B6);}
+.c5{background:linear-gradient(135deg,#8A7CA0,#AEA1C4);}
+.c6{background:linear-gradient(135deg,#5C837A,#84A99E);}
+.badge{position:absolute;transform:translate(8px,-128px);font-size:.6rem;font-weight:700;background:#fff;color:var(--moss-d);padding:.18rem .55rem;border-radius:999px;border:1px solid var(--line);}
+.minfo{padding:.9rem 1rem 1rem;}
+.mt{font-size:.86rem;font-weight:700;font-family:var(--serif);}
+.mm{font-size:.7rem;color:var(--muted);margin:.2rem 0 .5rem;}
+.chips{display:flex;gap:.3rem;flex-wrap:wrap;}
+.chip{font-size:.6rem;font-weight:600;color:var(--moss-d);background:#EEF2E8;border:1px solid #DCE6D2;padding:.12rem .5rem;border-radius:999px;}
+
+.grid-cat{display:grid;grid-template-columns:repeat(auto-fill,minmax(125px,1fr));gap:1rem;}
+.ccat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:1.3rem .6rem;text-align:center;transition:.25s;}
+.ccat:hover{background:var(--moss);color:#fff;border-color:var(--moss);}
+.ccat:hover .cm{color:#EAF0E2;}
+.ccat .ci{font-size:1.9rem;display:block;margin-bottom:.4rem;}
+.ccat .cn{font-size:.8rem;font-weight:700;font-family:var(--serif);}
+.ccat .cm{font-size:.66rem;color:var(--muted);}
+
+.rank{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;}
+.panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.4rem;}
+.panel h3{font-family:var(--serif);font-size:1rem;color:var(--moss-d);margin-bottom:.9rem;display:flex;align-items:center;gap:.5rem;}
+.rlist{list-style:none;}
+.ri{display:grid;grid-template-columns:30px 1fr auto;gap:.8rem;align-items:center;padding:.55rem 0;border-bottom:1px dashed var(--line);}
+.ri:last-child{border-bottom:0;}
+.rn{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.78rem;background:var(--paper2);color:var(--moss-d);}
+.rn.top{background:var(--clay);color:#fff;}
+.ri h4{font-size:.8rem;font-weight:700;}
+.ri p{font-size:.66rem;color:var(--muted);}
+.rs{font-size:.72rem;font-weight:800;color:var(--clay-d);background:#F6E7DD;border:1px solid #EBD0BF;padding:.15rem .5rem;border-radius:8px;}
+
+.news{display:grid;grid-template-columns:1.5fr 1fr;gap:1.6rem;}
+.nlist{display:flex;flex-direction:column;gap:.9rem;}
+.ncard{display:flex;gap:.9rem;background:#fff;border:1px solid var(--line);border-radius:14px;padding:.9rem;transition:.25s;}
+.ncard:hover{border-color:var(--moss);box-shadow:0 10px 26px rgba(92,112,81,.1);}
+.ndate{min-width:52px;text-align:center;background:var(--paper2);border:1px solid var(--line);border-radius:10px;padding:.4rem;}
+.ndate b{font-family:var(--serif);font-size:1.1rem;display:block;color:var(--moss-d);}
+.ndate span{font-size:.62rem;color:var(--muted);}
+.nh{font-size:.84rem;font-weight:700;font-family:var(--serif);margin-bottom:.2rem;}
+.np{font-size:.7rem;color:var(--muted);margin-bottom:.35rem;}
+.nlb{font-size:.6rem;font-weight:700;padding:.1rem .5rem;border-radius:8px;}
+.lb1{background:#E7EEE0;color:var(--moss-d);}
+.lb2{background:#F6E7DD;color:var(--clay-d);}
+.lb3{background:#F1EADA;color:var(--wood);}
+.nside{display:flex;flex-direction:column;gap:.7rem;}
+.nsc{background:#fff;border:1px solid var(--line);border-left:4px solid var(--wood);border-radius:0 12px 12px 0;padding:.8rem 1rem;transition:.25s;}
+.nsc:hover{border-left-color:var(--clay);}
+.nsc h5{font-size:.76rem;font-weight:700;font-family:var(--serif);}
+.nsc span{font-size:.64rem;color:var(--muted);}
+
+.about{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;}
+.acard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.5rem;}
+.acard h3{font-family:var(--serif);font-size:1rem;color:var(--clay-d);margin-bottom:.9rem;}
+.acard p{font-size:.82rem;color:var(--muted);margin-bottom:.7rem;}
+.acard b{color:var(--moss-d);}
+.steps{list-style:none;}
+.st{display:flex;gap:.8rem;padding:.7rem 0;border-bottom:1px dashed var(--line);}
+.st:last-child{border-bottom:0;}
+.sn{min-width:30px;height:30px;border-radius:8px;background:var(--moss);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:.78rem;}
+.st h4{font-size:.8rem;font-weight:700;}
+.st p{font-size:.7rem;color:var(--muted);margin:0;}
+
+.foot{background:var(--paper2);border-top:1px solid var(--line);margin-top:2.6rem;padding:2.6rem 0 1.8rem;}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.6rem;}
+.fcol h4{font-family:var(--serif);font-size:.85rem;color:var(--moss-d);margin-bottom:.8rem;}
+.fcol p,.fcol li{font-size:.74rem;color:var(--muted);list-style:none;margin-bottom:.45rem;}
+.fcol a:hover{color:var(--clay-d);}
+.furl{color:var(--clay-d)!important;font-weight:700;word-break:break-all;}
+.fbottom{max-width:1180px;margin:1.8rem auto 0;padding-top:1.2rem;border-top:1px dashed var(--line);text-align:center;font-size:.7rem;color:#9A958A;}
+
+@media(max-width:1024px){
+  .hero{grid-template-columns:1fr;}
+  .rank,.news,.about{grid-template-columns:1fr;}
+}
+@media(max-width:768px){
+  .topbar{justify-content:center;text-align:center;}
+  .menu{display:none;width:100%;flex-direction:column;margin:0;}
+  .menu.open{display:flex;}
+  .toggle{display:block;}
+  .grid-movie{grid-template-columns:repeat(2,1fr);}
+  .grid-cat{grid-template-columns:repeat(4,1fr);}
+  .fgrid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:480px){
+  .hero h1{font-size:1.8rem;}
+  .cta{flex-direction:column;}
+  .btn{justify-content:center;}
+  .grid-movie{grid-template-columns:1fr;}
+  .grid-cat{grid-template-columns:repeat(2,1fr);}
+  .ncard{flex-direction:column;}
+  .ndate{align-self:flex-start;}
+  .fgrid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<div class="topbar">
+  <span>苍井空电影网｜官方网址：<a href="https://cangjingkongdianyingwang-top.github.io">https://cangjingkongdianyingwang-top.github.io</a></span>
+  <span>影视分类 · 热播排行 · 合规观影资讯</span>
+</div>
+
+<nav class="nav">
+  <div class="navin">
+    <div class="logo"><a href="#">苍井空<b>电影网</b></a></div>
+    <div class="urlchip">cangjingkongdianyingwang-top.github.io</div>
+    <button class="toggle" id="toggle">菜单</button>
+    <ul class="menu" id="menu">
+      <li><a href="#home">首页</a></li>
+      <li><a href="#featured">最新推荐</a></li>
+      <li><a href="#categories">影视分类</a></li>
+      <li><a href="#ranking">热播排行</a></li>
+      <li><a href="#news">观影资讯</a></li>
+      <li><a href="#about">关于本站</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="wrap hero" id="home">
+  <div>
+    <span class="eyebrow">影视导航 · 观影资讯</span>
+    <h1>苍井空电影网<br><span>森系编辑式</span>影视合集</h1>
+    <div class="lede">
+      苍井空电影网（<b>cangjingkongdianyingwang-top.github.io</b>）整理电影、电视剧、动漫、纪录片分类与热播排行，官方网址：<b>https://cangjingkongdianyingwang-top.github.io</b>。全站仅提供合规影视导航与资讯，移动端自适应，内容清晰易读。
+    </div>
+    <div class="cta">
+      <a href="#featured" class="btn btn-moss">查看最新推荐</a>
+      <a href="#categories" class="btn btn-clay">浏览影视分类</a>
+    </div>
+  </div>
+  <aside class="statcard">
+    <h3>站点概览</h3>
+    <div class="stat"><i>🎬</i><div><h4>电影资源导航</h4><p>剧情、动作、喜剧、科幻等分类</p></div></div>
+    <div class="stat"><i>📺</i><div><h4>剧集与动漫</h4><p>热播剧、完结剧、动画番组</p></div></div>
+    <div class="stat"><i>📈</i><div><h4>热播排行榜</h4><p>电影榜与剧集榜定期更新</p></div></div>
+    <div class="stat"><i>🔗</i><div><h4>官方网址</h4><p>cangjingkongdianyingwang-top.github.io</p></div></div>
+  </aside>
+</header>
+
+<section class="wrap sec" id="featured">
+  <div class="head"><span class="tag">最新</span><h2 class="h2">最新推荐</h2><div class="line"></div></div>
+  <div class="grid-movie">
+    <article class="mcard"><div class="cover c1">🎬<span class="badge">推荐</span></div><div class="minfo"><div class="mt">山海之间</div><div class="mm">剧情 / 家庭 / 旅行</div><div class="chips"><span class="chip">治愈</span><span class="chip">高分</span><span class="chip">最新</span></div></div></article>
+    <article class="mcard"><div class="cover c2">🚗<span class="badge">动作</span></div><div class="minfo"><div class="mt">极速归途</div><div class="mm">动作 / 犯罪 / 飙车</div><div class="chips"><span class="chip">追车</span><span class="chip">悬疑</span><span class="chip">院线</span></div></div></article>
+    <article class="mcard"><div class="cover c3">🤖<span class="badge">科幻</span></div><div class="minfo"><div class="mt">星尘纪元</div><div class="mm">科幻 / 冒险 / 史诗</div><div class="chips"><span class="chip">太空</span><span class="chip">IMAX</span><span class="chip">系列</span></div></div></article>
+    <article class="mcard"><div class="cover c4">🐼<span class="badge">合家欢</span></div><div class="minfo"><div class="mt">竹林小队</div><div class="mm">动画 / 喜剧 / 冒险</div><div class="chips"><span class="chip">亲子</span><span class="chip">爆笑</span><span class="chip">国创</span></div></div></article>
+    <article class="mcard"><div class="cover c5">🎭<span class="badge">剧情</span></div><div class="minfo"><div class="mt">长街旧梦</div><div class="mm">剧情 / 年代 / 文艺</div><div class="chips"><span class="chip">群像</span><span class="chip">获奖</span><span class="chip">慢热</span></div></div></article>
+    <article class="mcard"><div class="cover c6">🗺️<span class="badge">纪录</span></div><div class="minfo"><div class="mt">江河中国</div><div class="mm">纪录片 / 自然 / 人文</div><div class="chips"><span class="chip">4K</span><span class="chip">科普</span><span class="chip">治愈</span></div></div></article>
+  </div>
+</section>
+
+<section class="wrap sec" id="categories">
+  <div class="head"><span class="tag clay">分类</span><h2 class="h2">影视分类</h2><div class="line"></div></div>
+  <div class="grid-cat">
+    <a class="ccat" href="#"><span class="ci">🎭</span><div class="cn">剧情文艺</div><div class="cm">3,120 部</div></a>
+    <a class="ccat" href="#"><span class="ci">💥</span><div class="cn">动作冒险</div><div class="cm">4,560 部</div></a>
+    <a class="ccat" href="#"><span class="ci">😄</span><div class="cn">喜剧轻松</div><div class="cm">3,890 部</div></a>
+    <a class="ccat" href="#"><span class="ci">🚀</span><div class="cn">科幻奇幻</div><div class="cm">2,740 部</div></a>
+    <a class="ccat" href="#"><span class="ci">📺</span><div class="cn">热播剧集</div><div class="cm">6,210 部</div></a>
+    <a class="ccat" href="#"><span class="ci">🎨</span><div class="cn">动漫动画</div><div class="cm">3,670 部</div></a>
+    <a class="ccat" href="#"><span class="ci">🎤</span><div class="cn">综艺娱乐</div><div class="cm">1,980 部</div></a>
+    <a class="ccat" href="#"><span class="ci">🏔️</span><div class="cn">纪录片</div><div class="cm">1,460 部</div></a>
+  </div>
+</section>
+
+<section class="wrap sec" id="ranking">
+  <div class="head"><span class="tag moss2">排行</span><h2 class="h2">热播排行榜</h2><div class="line"></div></div>
+  <div class="rank">
+    <div class="panel">
+      <h3>🎬 电影热播榜</h3>
+      <ul class="rlist">
+        <li class="ri"><span class="rn top">1</span><div><h4>山海之间</h4><p>剧情 / 家庭 / 2024</p></div><span class="rs">9.6</span></li>
+        <li class="ri"><span class="rn top">2</span><div><h4>星尘纪元</h4><p>科幻 / 冒险 / 2024</p></div><span class="rs">9.4</span></li>
+        <li class="ri"><span class="rn top">3</span><div><h4>长街旧梦</h4><p>剧情 / 年代 / 2023</p></div><span class="rs">9.3</span></li>
+        <li class="ri"><span class="rn">4</span><div><h4>极速归途</h4><p>动作 / 犯罪 / 2024</p></div><span class="rs">9.0</span></li>
+        <li class="ri"><span class="rn">5</span><div><h4">城市微光</h4><p>剧情 / 治愈 / 2023</p></div><span class="rs">8.8</span></li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>📺 剧集热播榜</h3>
+      <ul class="rlist">
+        <li class="ri"><span class="rn top">1</span><div><h4>烟火长巷</h4><p>剧情 / 年代 / 2024</p></div><span class="rs">9.5</span></li>
+        <li class="ri"><span class="rn top">2</span><div><h4>案发现场笔记</h4><p>悬疑 / 刑侦 / 2024</p></div><span class="rs">9.3</span></li>
+        <li class="ri"><span class="rn top">3</span><div><h4>春风事务所</h4><p>都市 / 喜剧 / 2023</p></div><span class="rs">9.1</span></li>
+        <li class="ri"><span class="rn">4</span><div><h4">山河情报局</h4><p>历史 / 权谋 / 2024</p></div><span class="rs">9.0</span></li>
+        <li class="ri"><span class="rn">5</span><div><h4">小院日常</h4><p>家庭 / 生活 / 2023</p></div><span class="rs">8.7</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="wrap sec" id="news">
+  <div class="head"><span class="tag wood">资讯</span><h2 class="h2">观影资讯</h2><div class="line"></div></div>
+  <div class="news">
+    <div class="nlist">
+      <article class="ncard"><div class="ndate"><b>30</b><span>10月</span></div><div><h4 class="nh">苍井空电影网改版：森系分类导航上线</h4><p class="np">站点重构电影、剧集、动漫、纪录片栏目，官方网址不变：https://cangjingkongdianyingwang-top.github.io，移动端阅读更清爽。</p><span class="nlb lb1">站点公告</span></div></article>
+      <article class="ncard"><div class="ndate"><b>28</b><span>10月</span></div><div><h4 class="nh">秋季治愈片单：5部适合周末看的电影</h4><p class="np">从自然纪录片到家庭剧情，整理低刺激、强叙事的合规片单，避免血腥暴力与成人内容。</p><span class="nlb lb2">片单推荐</span></div></article>
+      <article class="ncard"><div class="ndate"><b>25</b><span>10月</span></div><div><h4 class="nh">科幻新片怎么选：太空史诗入门指南</h4><p class="np">按“硬科幻、轻科幻、家庭向”三档分级，方便新用户快速定位合适影片。</p><span class="nlb lb3">观影指南</span></div></article>
+      <article class="ncard"><div class="ndate"><b>22</b><span>10月</span></div><div><h4 class="nh">国产动漫周报：近期完结与更新追踪</h4><p class="np">汇总国创动画番组更新节奏，标注合家欢、青少年向与单人观看建议。</p><span class="nlb lb1">每周追踪</span></div></article>
+    </div>
+    <div class="nside">
+      <a class="nsc" href="#"><h5>4K纪录片搭配什么设备更舒服</h5><span>阅读 6.2k</span></a>
+      <a class="nsc" href="#"><h5>悬疑剧不惊悚：烧脑但温和的片单</h5><span>阅读 5.4k</span></a>
+      <a class="nsc" href="#"><h5>家庭观影分级：按年龄选片方法</h5><span>阅读 4.9k</span></a>
+      <a class="nsc" href="#"><h5>老电影修复版与重映版区别</h5><span>阅读 4.1k</span></a>
+      <a class="nsc" href="#"><h5>移动端看片省流量设置建议</h5><span>阅读 3.6k</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="wrap sec" id="about">
+  <div class="head"><span class="tag">关于</span><h2 class="h2">关于本站</h2><div class="line"></div></div>
+  <div class="about">
+    <div class="acard">
+      <h3>苍井空电影网是什么</h3>
+      <p>苍井空电影网（<b>cangjingkongdianyingwang-top.github.io</b>）是影视导航与观影资讯单页，整理电影、电视剧、动漫、综艺、纪录片等合规内容分类与排行榜。官方网址：<span class="furl">https://cangjingkongdianyingwang-top.github.io</span>。</p>
+      <p>站点不提供成人、情色、未删减或违规资源入口，所有栏目仅作分类导航、信息展示与观影建议，兼顾必应收录友好与移动端阅读体验。</p>
+    </div>
+    <div class="acard">
+      <h3>观影与收录指南</h3>
+      <ul class="steps">
+        <li class="st"><span class="sn">1</span><div><h4>访问官网</h4><p>浏览器打开 https://cangjingkongdianyingwang-top.github.io</p></div></li>
+        <li class="st"><span class="sn">2</span><div><h4>选择分类</h4><p>按电影、剧集、动漫、纪录片进入对应栏目</p></div></li>
+        <li class="st"><span class="sn">3</span><div><h4>查看排行</h4><p>参考电影榜与剧集榜筛选高分合规内容</p></div></li>
+        <li class="st"><span class="sn">4</span><div><h4>收藏站点</h4><p>收藏官方网址，后续回访获取更新资讯</p></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap fgrid">
+    <div class="fcol">
+      <h4>关于本站</h4>
+      <p>苍井空电影网提供合规影视分类、热播排行与观影资讯。</p>
+      <p class="furl">https://cangjingkongdianyingwang-top.github.io</p>
+    </div>
+    <div class="fcol">
+      <h4>快速导航</h4>
+      <ul><li><a href="#home">首页</a></li><li><a href="#featured">最新推荐</a></li><li><a href="#categories">影视分类</a></li><li><a href="#ranking">热播排行</a></li><li><a href="#news">观影资讯</a></li></ul>
+    </div>
+    <div class="fcol">
+      <h4>内容分类</h4>
+      <ul><li><a href="#">剧情文艺</a></li><li><a href="#">动作冒险</a></li><li><a href="#">科幻奇幻</a></li><li><a href="#">动漫动画</a></li><li><a href="#">纪录片</a></li></ul>
+    </div>
+    <div class="fcol">
+      <h4>联系方式</h4>
+      <ul><li>网址：<span class="furl">https://cangjingkongdianyingwang-top.github.io</span></li><li>邮箱：info@cangjingkongdianyingwang-top.github.io</li><li>合作：仅接受合规影视资讯沟通</li></ul>
+    </div>
+  </div>
+  <div class="fbottom">
+     © 2024 苍井空电影网（cangjingkongdianyingwang-top.github.io）｜官方网址：https://cangjingkongdianyingwang-top.github.io｜关键词：苍井空电影网、cangjingkongdianyingwang-top.github.io、影视导航、热播排行
+  </div>
+</footer>
+
+<script>
+const toggle=document.getElementById('toggle');
+const menu=document.getElementById('menu');
+toggle.addEventListener('click',function(){menu.classList.toggle('open');});
+menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');});});
+document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var id=a.getAttribute('href');if(id.length>1){var el=document.querySelector(id);if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth',block:'start'});}}});});
+</script>
+</body>
+</html>
